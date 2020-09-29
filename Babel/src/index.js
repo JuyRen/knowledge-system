@@ -1,15 +1,27 @@
-const isHas = [1, 2, 3].includes(2);
-const p = new Promise((resolve, reject) => {
-    resolve(100);
+const arr = [1, 2, 3];
+
+arr.map((item) => {
+  console.log(item);
 });
 
-class Point {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-    getX() {
-        return this.x;
-    }
+Promise.resolve().finally();
+
+class Person {
+  constructor(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
+
+  getName() {
+    console.log(this.name);
+  }
+
+  static setName(name) {
+    this.name = name;
+  }
 }
-let cp = new Point(25, 8);
+
+async function fn() {
+  const time = await Promise.resolve("你好");
+  console.log(time);
+}
