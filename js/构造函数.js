@@ -77,3 +77,27 @@
   console.log(dog1.age);
   dog1.getName();
 }
+
+{
+  /**
+   * 问： new 的具体过程？
+   * 答：
+   *      1. 创建一个空对象a， Object.create(null)
+   *      2. 将a.__proto__ 指向 构造函数fn.prototype
+   *      3. 将构造函数显式绑定到a对象上, 使用apply fn.apply(a, arguments)
+   *      4. 返回该对象
+   *
+   *  如何获取fn, 以及参数
+   *  1. [].shift.call(arguments) ...Arg// 将arguments第一个元素截取，并返回
+   *  2. arguments // 剩下的arguments就是参数
+   */
+  function myNew(fn, ...rest) {
+    const obj = Object.create(null);
+
+    obj.__proto__ === fn.prototype;
+
+    fn.apply(obj, rest);
+
+    return obj;
+  }
+}

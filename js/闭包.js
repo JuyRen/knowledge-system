@@ -1,4 +1,13 @@
+// 闭包： 能够使用外部函数变量的函数
 {
+  function foo() {
+    var a = 1;
+  }
+
+  // console.log(a); // 无法从外部读取函数内部的变量
+
+  // 如何从外部读取局部变量？
+
   function updateCount() {
     var count = 0;
     function getCount(val) {
@@ -9,9 +18,9 @@
     }
     return getCount; //外部函数返回
   }
+
   var count = updateCount();
-  count(815); //815
-  count(); //816
+  count(815); //815  在外部调用了count
 }
 
 {
