@@ -115,9 +115,6 @@
 }
 
 {
-  // promise 不会以初始状态决定最终状态， 而是已前一个状态决定后一个状态
-  // 在promise链式调用中更加能体现
-
   const promise1 = new Promise((resolve, reject) => reject());
 
   const promise2 = promise1.then(null, function () {

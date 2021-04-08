@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import http from "./server/http";
+
+import "./App.css";
 
 function App() {
+  const getApi = () => {};
+
+  const postApi = () => {
+    http("post", "https://proxy.yipiaoyun.cn/kaipiao-app/getUserInfo").then(
+      (res) => {
+        console.log("res: ", res);
+      }
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={getApi}>get</button>
+      <button onClick={postApi}>post</button>
     </div>
   );
 }

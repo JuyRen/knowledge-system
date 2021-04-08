@@ -1,35 +1,36 @@
 // dom事件流
 
-{
-  const parent = document.querySelector("#parent");
-  const son = document.querySelector("#son");
-  const grandson = document.querySelector("#grandson");
+// {
+//   const parent = document.querySelector("#parent");
+//   const son = document.querySelector("#son");
+//   const grandson = document.querySelector("#grandson");
 
-  document.addEventListener(
-    "click",
-    (event) => {
-      event.stopPropagation();
-      alert("无法执行后续的点击");
-    },
-    true
-  );
+//   document.addEventListener(
+//     "click",
+//     (event) => {
+//       event.stopPropagation();
+//       alert("无法执行后续的点击");
+//     },
+//     true
+//   );
 
-  parent.addEventListener("click", () => {
-    console.log("click parent");
-  });
+//   parent.addEventListener("click", () => {
+//     console.log("click parent");
+//   });
 
-  son.addEventListener("click", () => {
-    console.log("click son");
-  });
+//   son.addEventListener("click", () => {
+//     console.log("click son");
+//   });
 
-  grandson.addEventListener("click", () => {
-    console.log("click grandson");
-  });
-}
+//   grandson.addEventListener("click", () => {
+//     console.log("click grandson");
+//   });
+// }
 
 {
   /**
    *  window.addEventListener 监听什么阶段的事件
+   *  默认冒泡， 填true是捕获
    */
   window.addEventListener("click", () => {
     console.log(1);
