@@ -15,3 +15,7 @@ console.log("develop-1  ");
 // 4.1 feature操作-2
 // 4.2 feature操作-2.1
 // 4.3 feature操作-4.3
+
+// 2021-4-12
+var date = +new Date();
+console.log(data);
