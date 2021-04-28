@@ -1,0 +1,22 @@
+{
+  "name": "knowledge-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "git.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuyRen/knowledge-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuyRen/knowledge-system/issues"
+  },
+  "homepage": "https://github.com/JuyRen/knowledge-system#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
