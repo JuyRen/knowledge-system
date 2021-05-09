@@ -37,10 +37,15 @@ Men.prototype = Object.create(Person.prototype, {
   },
 });
 
-Men.prototype.getDisk = function () {
+// Men.prototype = Person.prototype; // 引用这个值，对Men.prototype操作，会影响Person.prototype
+
+Men.prototype.getDick = function () {
   console.log(this.dickLength);
 };
 
 const men1 = new Men("Jack", 21, 18);
 
 console.log("men1: ", men1);
+
+const p1 = new Person("tom", 25);
+console.log("p1: ", p1);
