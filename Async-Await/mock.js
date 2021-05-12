@@ -18,20 +18,18 @@ function* fn() {
 
 function myAsync(fn) {
   return new Promise((resolve, reject) => {
-    let g = fn();
+    const g = fn(); // 生成一个迭代器
 
-    function recursive(val) {
-      let { value, done } = g.next(val);
+    function loop(val) {
+      const { done, value } = g.next(val);
 
       if (done) {
         resolve(value);
       } else {
-        return Promise.resolve(value).then(recursive);
+        loop(value);
       }
     }
 
-    recursive();
+    loop();
   });
 }
-
-myAsync(fn).then(console.log);

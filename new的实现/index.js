@@ -12,13 +12,16 @@ Person.prototype.getInfo = function () {
 function myNew(fn, ...rest) {
   const obj = Object.create(null);
 
-  const d = fn.apply(obj, rest); // 使obj能访问到属性
+  const res = fn.apply(obj, rest); // 1.改变fn的this指向, 使新对象获取函数的属性
 
-  if ((typeof d === "object") & (d !== null)) {
-    return d;
+  // ! 针对fn有返回值的情况
+  // ! 如果res返回了对象类型,那么直接return这个返回值
+
+  if (typeof res === "object" && res !== null) {
+    return res;
   }
 
-  obj.__proto__ = fn.prototype; // 使obj能访问到prototype
+  obj.__proto__ = fn.prototype; // 2. 新对象obj原型对象赋值，使新对象获取到fn的原型上的方法和属性
 
   return obj;
 }
