@@ -7,6 +7,10 @@ function getUserAction(e) {
   this.innerHTML = count++;
 }
 
+// 两种方式可以实现节流
+// 1. timer (不能立即执行)
+// 2. 计算时间 (立即执行)
+
 function throttle(fn, delay, immediate) {
   let timer = null;
   let preTime = 0;
@@ -35,7 +39,7 @@ function throttle(fn, delay, immediate) {
   return wrap;
 }
 
-const t = throttle(getUserAction, 2000, false);
+const t = throttle(getUserAction, 2000, true);
 
 container.onmousemove = t;
 
