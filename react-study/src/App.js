@@ -1,18 +1,23 @@
-import React from "react";
-import RefComp from "./components/RefComp";
-import PureComponentComp from "./components/PureComponentComp";
-import CloneElement from "./components/CloneElement";
-import ContextComp from "./components/Context";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <RefComp />
-      <PureComponentComp />
-      <CloneElement>
-        <div>我是克隆的</div>
-      </CloneElement>
-      <ContextComp />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
