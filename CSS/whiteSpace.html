@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      width: fit-content;
+      margin-bottom: 40px;
+      border: 1px solid black;
+    }
+
+    .width-200 {
+      width: 200px;
+    }
+
+    .normal {
+      white-space: normal;
+    }
+
+    .pre {
+      white-space: pre;
+    }
+
+    .pre-wrap {
+      white-space: pre-wrap;
+    }
+
+    .pre-line {
+      white-space: pre-line;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+
+  </style>
+  <body>
+    <table style="margin-bottom: 20px;" border>
+      <thead>
+        <th>属性</th>
+        <th>空格（连续空格）</th>
+        <th>换行符</th>
+        <th>文字换行（宽度不够）</th>
+        <th>末尾空格</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>normal</td>
+          <td>合并（合成一个空格）</td>
+          <td>合并（合成一个空格）</td>
+          <td>换行</td>
+          <td>删除</td>
+        </tr>
+        <tr>
+          <td>pre</td>
+          <td>保留</td>
+          <td>保留</td>
+          <td>不换行</td>
+          <td>保留</td>
+        </tr>
+        <tr>
+          <td>pre-wrap</td>
+          <td>保留</td>
+          <td>保留</td>
+          <td>换行</td>
+          <td>保留</td>
+        </tr>
+        <tr>
+          <td>pre-line</td>
+          <td>合并（合成一个空格）</td>
+          <td>保留</td>
+          <td>换行</td>
+          <td>删除</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>normal</div>
+    <div class="box normal">aa   aaa
+aa aa
+a  veryLongWords       </div>
+
+<div class="box normal width-200">aa   aaa
+aa aa
+a  veryLongWords       </div>
+
+    <div>pre</div>
+    <div class="box pre">aa   aaaaa aaa  veryLongWords           </div>
+
+    <div>pre-wrap</div>
+    <div class="box pre-wrap width-200">aa   aaaaa aaa  veryLongWords           </div>
+
+    <div>pre-line</div>
+    <div class="box pre-line">aa    aaaaa aaa  veryLongWords           </div>
+
+    <div>nowrap</div>
+    <div class="box nowrap"></div>
+  </body>
+</html>
