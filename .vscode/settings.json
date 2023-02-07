@@ -1,3 +1,4 @@
 {
-  "editor.formatOnSave": false // 保存时按照格式化工具进行格式化
+  "editor.formatOnSave": false,
+  "liveServer.settings.port": 5501 // 保存时按照格式化工具进行格式化
 }
